@@ -16,7 +16,8 @@
   ],
   "main": "./lib/auditlog.js",
   "dependencies": {
-    "mongoose": "3.5.2"
+    "mongoose": "3.5.2",
+    "async": "0.1.22"
   },
   "engines": {
     "node": ">= 0.2.0"
