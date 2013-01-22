@@ -2,6 +2,7 @@
   "name": "audit-log",
   "description": "Audit Logging Toolkit",
   "version": "0.9.0",
+  "private": true,
   "author": {
     "name": "Craig Coffman",
     "email": "ch.cr.co@gmail.com"
