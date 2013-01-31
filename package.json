@@ -9,7 +9,9 @@
   ],
   "author": "Craig Coffman <ch.cr.co@gmail.com>",
   "main": "index",
-  "dependencies": {},
+  "dependencies": {
+      "async": "0.1.22"
+  },
   "engines": {
     "node": "*"
   },
