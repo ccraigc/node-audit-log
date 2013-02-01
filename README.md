@@ -49,6 +49,37 @@ auditLog.log({message:'Call your mother.'});
 ```
 
 **4. Use a Plugin to Automatically Send Messages**
+
+There are some plugins already available which ship with AuditLog, including Mongoose CRUD logging and Express route logging.
+
+
+**Addendum**
+
+It's usually a good idea to check any documentation in the Transports and Plugins, because they can vary a fair amount,
+and might be specifically written to handle a specific *logType*.
+
+
+# Plugins
+
+## Express
+Log requests, and automatically assign an actor to events by checking session variables.
+
+### Usage Example
+```javascript
+// setup the plugin
+var auditLogExpress = auditLog.getPlugin('express', {
+    userIdPath:['user','_id'],
+    whiteListPaths:[/^\/some\/particular\/path.*$/]
+});
+
+// use it in your Express app
+app.use(auditLogExpress.middleware);
+```
+
+## Mongoose
+Log MongoDB database activity by adding this plugin to your models.
+
+### Usage Example
 ```javascript
 // Here's the mongoose plugin being used on a Model
 var mongoose = require('mongoose'),
@@ -63,12 +94,6 @@ var HumanSchema = new Schema({
 var pluginFn = auditLog.getPlugin('mongoose', {modelName:'Human', namePath:'name'}); // setup occurs here
 HumanSchema.plugin(pluginFn.handler); // .handler is the pluggable function for mongoose in this case
 ```
-
-**Addendum**
-
-It's usually a good idea to check any documentation in the Transports and Plugins, because they can vary a fair amount,
-and might be specifically written to handle a specific *logType*.
-
 
 # Roadmap
 
