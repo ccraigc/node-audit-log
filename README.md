@@ -6,8 +6,14 @@ Mongoose (CRUD logging via model plugin) and Express (access logging via route m
 
 
 # How To Use It
+**0. Install the module:**
+
+Use NPM to install the module, like so:
+
+    npm install audit-log
 
 **1. Include the library:**
+
 ```javascript
 var auditLog = require('audit-log');
 ```
