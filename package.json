@@ -10,7 +10,8 @@
   "author": "Craig Coffman <ch.cr.co@gmail.com>",
   "main": "index",
   "dependencies": {
-      "async": "0.1.22"
+      "async": "0.1.22",
+      "socket.io": "0.9.13"
   },
   "engines": {
     "node": "*"

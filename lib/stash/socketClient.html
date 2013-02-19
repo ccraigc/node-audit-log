@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head><title>AuditLog Monitor</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <style type="text/css">
+        #status {}
+    </style>
+</head><body>
+<h1>Event Monitor</h1>
+<table border=0 cellspacing=0 cellpadding=3 width="100%" id="logtable">
+    <thead>
+        <tr>
+            <th>actor</th>
+            <th>date</th>
+            <th>origin</th>
+            <th>action</th>
+            <th>label</th>
+            <th>object</th>
+            <th>description</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="7"><div id="status">...</div></td>
+        </tr>
+    </tfoot>
+</table>
+<script>
+    var socket = io.connect('http://127.0.0.1');
+    socket.on('log', function(data) {
+        $('#logtable tbody').prepend('<tr>'
+            + '<td>'+data.actor+'</td>'
+            + '<td>'+data.date+'</td>'
+            + '<td>'+data.origin+'</td>'
+            + '<td>'+data.action+'</td>'
+            + '<td>'+data.label+'</td>'
+            + '<td>'+data.object+'</td>'
+            + '<td>'+data.description+'</td>'
+            + '</tr>');
+    });
+</script>
+</body></html>
