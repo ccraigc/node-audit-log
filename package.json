@@ -7,6 +7,10 @@
     "log",
     "audit"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ccraigc/node-audit-log"
+  },
   "author": "Craig Coffman <ch.cr.co@gmail.com>",
   "main": "index",
   "dependencies": {
